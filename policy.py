@@ -11,18 +11,32 @@
 #
 
 
+#from colorama import Fore, Style
 from collections import deque
 from decimal import Decimal
-from typing import Any, List
-
+from typing import Any, List, Optional
 import numpy as np
-
 from dojo.actions.base_action import BaseAction
 from dojo.actions.uniswapV3 import UniswapV3Trade
 from dojo.agents import BaseAgent
 from dojo.environments.uniswapV3 import UniswapV3Observation
 from dojo.policies import BasePolicy
-
+from dojo.agents import UniswapV3Agent
+from decimal import Decimal
+from typing import Optional
+from dojo.agents import UniswapV3Agent
+from dojo.environments.uniswapV3 import UniswapV3Observation
+# helper functions:
+def echo(expr, label=None):
+    """
+    prints expr and returns expr
+    """
+    expr = str(expr)
+    if label:
+        print(f"{label}: {expr}")
+    else:
+        print(expr)
+    return expr
 
 #pools = ["USDC/WETH-0.05", "WBTC/WETH-0.05"]
 
@@ -30,7 +44,7 @@ class buy_bitcoins(BasePolicy):  # type: ignore
     """A policy that executes a single action: buying bitcoins.
     """
 
-    def __init__(self, agent):
+    def __init__(self, agent: BaseAgent):
         """Initialize the policy.
 
         :param agent: The agent which is using this policy.
@@ -39,23 +53,39 @@ class buy_bitcoins(BasePolicy):  # type: ignore
         super().__init__(agent)
 
     
-    def dump_dollars(agent):
+    def dump_dollars(self, agent):
 
-        amount_of_dollars = 
+        amount_of_dollars = agent.initial_portfolio['USDC']
+        echo(amount_of_dollars,"amount_of_dollars")
 
         return UniswapV3Trade(agent=agent,
-                              pool = "USDC/WETH-0.05"
-                              quantities=()
+                              pool = "USDC/WETH-0.05",
+                              quantities=(-amount_of_dollars, Decimal(0))
+                              )
+    
+    def buy_bitcoin(self, agent):
+
+        amount_of_WETH = agent.initial_portfolio['WETH']
+        echo(amount_of_WETH,"amount_of_WETH")
+
+        return UniswapV3Trade(agent=agent,
+                              pool = "WBTC/WETH-0.05",
+                              quantities=(Decimal(0), amount_of_WETH)
                               )
 
         
 
         
-        self.dump_your_dollars = act.buy(agent, "USDC/WETH-0.05", Decimal(100))
-        self.buy_bitcoin = act.sell(agent, "USDC/WETH-0.05", Decimal(100))
+#        self.dump_your_dollars = act.buy(agent, "USDC/WETH-0.05", Decimal(100))
+#        self.buy_bitcoin = act.sell(agent, "USDC/WETH-0.05", Decimal(100))
 
 
     def predict(self, obs):
+
+        # action1
+        dump_your_dollars = self.dump_dollars(self.agent)
+        # action2
+        buy_more_bitcoin = self.buy_bitcoin(self.agent)
         #p = self.agent.portfolio()
         #echo_red(self.agent.initial_portfolio,"init_p")
         #echo_red(p,"p")
@@ -63,29 +93,30 @@ class buy_bitcoins(BasePolicy):  # type: ignore
         #sig(initial_agent_wealth(obs,))
 
         
-        
+        x = Decimal(1)
+        y = Decimal(1)
 
-        buy = self.buy
-        sell = self.sell
-        x = self.last_price
-        y = pric(obs)
+#        buy = self.buy
+#        sell = self.sell
+#        x = self.last_price
+#        y = pric(obs)
 
-        sig(x,'x',obs)
-        sig(y,'y',obs)
+#        sig(x,'x',obs)
+#        sig(y,'y',obs)
 
 
         if x - y > Decimal(0.1):
-            echo_yellow("price has dropped: buy!!!")
-            self.last_price = y
+#            echo_yellow("price has dropped: buy!!!")
+#            self.last_price = y
             return []
         elif x - y < Decimal(0.1):
             #echo_yellow("price hasn't changed much: do nothing!!!")
-            self.last_price = y
+#            self.last_price = y
             return []
         else:
-            echo_yellow("price has risen: sell!!!")
-            self.last_price = y
-            return [] 
+#            echo_yellow("price has risen: sell!!!")
+#®            self.last_price = y
+            return [dump_your_dollars, buy_more_bitcoin] 
         
 
 
@@ -113,17 +144,6 @@ class UniswapV3PoolWealthAgent(UniswapV3Agent):
 
     def reward(self, obs: UniswapV3Observation) -> float:  # type: ignore
         """The agent wealth in units of asset y according to the UniswapV3 pool."""
-        pool = obs.pools[0]
-        pool_tokens = obs.pool_tokens(pool=pool)
+        # define your PnL here, I'm happy to supply my own if asked.
 
-        token_ids = self.get_liquidity_ownership_tokens()
-        lp_portfolio = obs.lp_portfolio(token_ids)
-        wallet_portfolio = self.erc20_portfolio()
-
-        # wealth expressed as token0 of the pool
-        wealth = Decimal(0)
-        for token, quantity in lp_portfolio.items():
-            wealth += quantity * obs.price(token=token, unit=pool_tokens[0], pool=pool)
-        for token, quantity in wallet_portfolio.items():
-            wealth += quantity * obs.price(token=token, unit=pool_tokens[0], pool=pool)
-        return float(wealth)
+        return Decimal(1_000_000_000)
