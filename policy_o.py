@@ -1,6 +1,4 @@
-########## ASSUMPTIONS #################################################
-########################################################################
-#
+# ASSUMPTIONS:
 # add these lines to your "run.py" file
 #
 # pools = ["USDC/WETH-0.05", "WBTC/WETH-0.05"]
@@ -10,10 +8,9 @@
 #     name="bitcoin_buyer",
 #)
 #
-########################################################################
-########################################################################
 #
-# START: 
+
+
 #from colorama import Fore, Style
 from collections import deque
 from decimal import Decimal
@@ -29,8 +26,6 @@ from decimal import Decimal
 from typing import Optional
 from dojo.agents import UniswapV3Agent
 from dojo.environments.uniswapV3 import UniswapV3Observation
-
-#######################################################################
 # helper functions:
 def echo(expr, label=None):
     """
@@ -38,7 +33,7 @@ def echo(expr, label=None):
     """
     expr = str(expr)
     if label:
-        print(f"{label} --> {expr}")
+        print(f"{label}: {expr}")
     else:
         print(expr)
     return expr
@@ -56,47 +51,71 @@ class buy_bitcoins(BasePolicy):  # type: ignore
         :param action: The action to execute.
         """
         super().__init__(agent)
-        # rate of dumping
-        self.dump_rate = Decimal(0.5)
 
     
     def dump_dollars(self, agent):
 
-        amount_of_dollars = self.agent.erc20_portfolio()['USDC']
-        if amount_of_dollars > amount_of_dollars * self.dump_rate + Decimal(0.01):
-
-            # amount to sell
-            amount = amount_of_dollars * self.dump_rate
-        else:
-            amount = Decimal(0)
-
+        amount_of_dollars = agent.initial_portfolio['USDC']
         echo(amount_of_dollars,"amount_of_dollars")
 
         return UniswapV3Trade(agent=agent,
                               pool = "USDC/WETH-0.05",
-                              quantities=(amount, Decimal(0))
+                              quantities=(-amount_of_dollars, Decimal(0))
                               )
     
     def buy_bitcoin(self, agent):
 
-        amount_of_WETH = Decimal(0.01)* self.agent.erc20_portfolio()['WETH']
-
-        if amount_of_WETH > amount_of_WETH * self.dump_rate + Decimal(0.01):
-
-            # amount to sell
-            amount = amount_of_WETH * self.dump_rate
-        else:
-            amount = Decimal(0)
+        amount_of_WETH = agent.initial_portfolio['WETH']
         echo(amount_of_WETH,"amount_of_WETH")
 
         return UniswapV3Trade(agent=agent,
                               pool = "WBTC/WETH-0.05",
-                              quantities=(Decimal(0), amount)
+                              quantities=(Decimal(0), amount_of_WETH)
                               )
 
+        
+
+        
+#        self.dump_your_dollars = act.buy(agent, "USDC/WETH-0.05", Decimal(100))
+#        self.buy_bitcoin = act.sell(agent, "USDC/WETH-0.05", Decimal(100))
+
+
     def predict(self, obs):
-        echo(self.agent.erc20_portfolio()['WBTC'],'self.agent.erc20_portfolio()[\'WBTC\']')
-        return [
+
+        # action1
+        
+        # action2
+        #p = self.agent.portfolio()
+        #echo_red(self.agent.initial_portfolio,"init_p")
+        #echo_red(p,"p")
+        #echo_red(current_wealth(obs, p),"c_weal")
+        #sig(initial_agent_wealth(obs,))
+
+        
+        x = Decimal(1)
+        y = Decimal(1)
+
+#        buy = self.buy
+#        sell = self.sell
+#        x = self.last_price
+#        y = pric(obs)
+
+#        sig(x,'x',obs)
+#        sig(y,'y',obs)
+
+
+        if x - y > Decimal(0.1):
+#            echo_yellow("price has dropped: buy!!!")
+#            self.last_price = y
+            return []
+        elif x - y < Decimal(0.1):
+            #echo_yellow("price hasn't changed much: do nothing!!!")
+#            self.last_price = y
+            return []
+        else:
+#            echo_yellow("price has risen: sell!!!")
+#®            self.last_price = y
+            return [
                 self.dump_dollars(self.agent),
                 self.buy_bitcoin(self.agent)
                 ] 

@@ -1,0 +1,443 @@
+
+[32m
+                             _   _
+                            (_) | |
+      __ _   _ __   __   __  _  | |
+     / _` | | '_ \  \ \ / / | | | |
+    | (_| | | | | |  \ V /  | | | |
+     \__,_| |_| |_|   \_/   |_| |_|
+[0m
+    0.2.0 (fdd321b 2024-10-15T00:21:13.119600000Z)
+    [32mhttps://github.com/foundry-rs/foundry[0m
+
+Available Accounts
+==================
+
+(0) 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 (10000000000000000000.000000000000000000 ETH)
+
+Private Keys
+==================
+
+(0) 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+
+Wallet
+==================
+Mnemonic:          test test test test test test test test test test test junk
+Derivation path:   m/44'/60'/0'/0/
+
+
+Fork
+==================
+Endpoint:       http://json-rpc.8x689gc5q5t1ur5cbyh5l6dbh.blockchainnodeengine.com?key=AIzaSyDhlyN5TjPvG_frcIjdSIdtYRhFqRXLYRQ
+Block number:   14999390
+Block hash:     0x166cb14f701e0a432492998805709aa988833a934686e7f70d1a45ae93ef1d53
+Chain ID:       31337
+
+Base Fee
+==================
+
+[32m0[0m
+
+Gas Limit
+==================
+
+[32mDisabled[0m
+
+Genesis Timestamp
+==================
+
+[32m1729981897[0m
+
+IPC path: /tmp/anvil_29435.ipc
+web3_clientVersion
+Listening on 127.0.0.1:29435
+anvil_autoImpersonateAccount
+evm_mine
+
+    Block Number: 14999391
+    Block Hash: 0x05e37fc7ae4ddd5b9b5c6d11c650b5ef83b8eaf710ca983e4fd5868e29c89dac
+    Block Time: "Mon, 20 Jun 2022 23:59:49 +0000"
+
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+eth_accounts
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+evm_mine
+
+    Transaction: 0x631197990efea9b7464c1f9e7f2e9e677bfbe795ba0121b7dc56ab228089ff48
+    Gas used: 60861
+
+    Transaction: 0x6905fe0ffb14b8178f5d0ef325f1864f40866a78b1f6b466c558a153454cc5ed
+    Gas used: 107703
+
+    Transaction: 0xd4c392f0bb4ec92c70639d258c2acd9ad411f9903781d8527e0233226384b4f9
+    Gas used: 157326
+
+    Transaction: 0x62d571665d5b474dffdeb2cddf16d23031fb32d13f38cc43716e4a5370b5996f
+    Gas used: 178326
+
+    Block Number: 14999392
+    Block Hash: 0xc6f05f2fc4bf9e066258e5b090704f5698b685308b6ec99d3dcda76a88e7190b
+    Block Time: "Mon, 20 Jun 2022 23:59:50 +0000"
+
+eth_getTransactionReceipt
+eth_getTransactionReceipt
+eth_getTransactionReceipt
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_getBalance
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+evm_mine
+
+    Transaction: 0x332cf6609cc89222a99c593fa5b72ba1aa169ce6baeb219e2419487e162a2d83
+    Gas used: 60311
+
+    Block Number: 14999393
+    Block Hash: 0x66951a04f912390ec9fe844963d911fc5e8827d3dc320c648bc1d67f4c241877
+    Block Time: "Mon, 20 Jun 2022 23:59:51 +0000"
+
+eth_getTransactionReceipt
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+evm_mine
+
+    Transaction: 0x609d0a364cdd921b5dbe512c831497b284766442bf7fc07f0b213cd2b1410991
+    Gas used: 60311
+
+    Block Number: 14999394
+    Block Hash: 0x7ce8d7de58c5d150382cd2d01f12e01c8fb8e09b14468822b752470e878b1b05
+    Block Time: "Mon, 20 Jun 2022 23:59:52 +0000"
+
+eth_getTransactionReceipt
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+evm_mine
+
+    Transaction: 0x23291a54b8687085fd2f5b2553dcfe42a121f55473d63fde27ab1d38d568f04f
+    Gas used: 46364
+
+    Block Number: 14999395
+    Block Hash: 0x1a2f385263f301590b52c6660475915ab2b8beb5d18f314b6cbfe3a3b80f61a0
+    Block Time: "Mon, 20 Jun 2022 23:59:53 +0000"
+
+eth_getTransactionReceipt
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+evm_mine
+
+    Transaction: 0x2c71335502ba2e101075e0380befe3d6d122dbad8af7f9e6788ff1e64b867d11
+    Gas used: 46364
+
+    Block Number: 14999396
+    Block Hash: 0x804875f3b22ca7721bb3fe70eedff61c53635f43049cb44c822efa0224fc13c5
+    Block Time: "Mon, 20 Jun 2022 23:59:54 +0000"
+
+eth_getTransactionReceipt
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+evm_mine
+
+    Transaction: 0x1ea59f50efff6e1817e0384e822751e112e0f36344aeb58bd05eaa6bdc88b68e
+    Gas used: 48668
+
+    Block Number: 14999397
+    Block Hash: 0xc69994fd67b9d5c3ab1586eb7c7e402d434bf8d16da59481a2f4cbba818978f9
+    Block Time: "Mon, 20 Jun 2022 23:59:55 +0000"
+
+eth_getTransactionReceipt
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+evm_mine
+
+    Transaction: 0x542272945812131d99a9ae507c13ac603a1cd78f207927050eaa23b6d6ca947e
+    Gas used: 48668
+
+    Block Number: 14999398
+    Block Hash: 0x30c7df498583a48ac1b206add7ef2677146d14d5f1e796f093b7079cfc09f728
+    Block Time: "Mon, 20 Jun 2022 23:59:56 +0000"
+
+eth_getTransactionReceipt
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+eth_accounts
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+evm_mine
+
+    Transaction: 0xad3e27fbb01f1fb3668c80851a49562b82a3dbcddaca3fbc7623013c89510aef
+    Gas used: 65625
+
+    Transaction: 0x15f255905db4d5f6dc3ad9267b646b3064bcb850446d3ba0aec19f406987c430
+    Gas used: 117231
+
+    Transaction: 0x2d6257b794162e00489a59f68a4d0069d89c4e72f5b3cb3115d07a1bad8ddcd6
+    Gas used: 171630
+
+    Transaction: 0xa6cb5ea64c7d30bfbe4dfed960cc54140c5e0d80b5982f94cf0db7b2405e97b5
+    Gas used: 192630
+
+    Block Number: 14999399
+    Block Hash: 0xe5769e915b4c920a30c872792bdc30825cfde328cbfb74c5e2ab967da71433d9
+    Block Time: "Mon, 20 Jun 2022 23:59:57 +0000"
+
+eth_getTransactionReceipt
+eth_getTransactionReceipt
+eth_getTransactionReceipt
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_getBalance
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+evm_mine
+
+    Transaction: 0xacd12af4d1346b4dd5d93619cf599e870e41c7ad5e7f0d9177012d67d5dd7ba9
+    Gas used: 60311
+
+    Block Number: 14999400
+    Block Hash: 0x6277147d5aa3847b3e946122045ca9711ed0b6aae8490b26cf8e8e4a034c4e9c
+    Block Time: "Mon, 20 Jun 2022 23:59:58 +0000"
+
+eth_getTransactionReceipt
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+evm_mine
+
+    Transaction: 0xdc688e0b8493576bf209f9ad2bb984e543259d3c230bd2b4bafebfbff927f256
+    Gas used: 60311
+
+    Block Number: 14999401
+    Block Hash: 0x8aaa661c2a053012b557152d36045d5ed830655a885a657180feef60e6c78f92
+    Block Time: "Mon, 20 Jun 2022 23:59:59 +0000"
+
+eth_getTransactionReceipt
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+evm_mine
+
+    Transaction: 0xecd28840b1885e1a09017d4c840fcdddde57b9aa73673159e38c9889f43f7850
+    Gas used: 46364
+
+    Block Number: 14999402
+    Block Hash: 0x3715eeaf8bafd10dec5dd624b3826b0c26b2a64e729e0493b3107931d7b888cb
+    Block Time: "Tue, 21 Jun 2022 00:00:00 +0000"
+
+eth_getTransactionReceipt
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+evm_mine
+
+    Transaction: 0x851976ccb480cd3f0e73673ee717cbf13f054d8c6bb0df41f49d111dff6496a2
+    Gas used: 46364
+
+    Block Number: 14999403
+    Block Hash: 0x6b271119f0a7e7faf2b8c5576867f3e58c8f7fba0249a97126c059e62dd01a0e
+    Block Time: "Tue, 21 Jun 2022 00:00:01 +0000"
+
+eth_getTransactionReceipt
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+evm_mine
+
+    Transaction: 0xb53cd2773aa9c8885736d490da714ca769113ac0fbc0c3d019c47480897771a0
+    Gas used: 48668
+
+    Block Number: 14999404
+    Block Hash: 0x345921ddfb78b1a8f595d84168b0e3fa4d7135a488c2d17bacbfe0beaad5e737
+    Block Time: "Tue, 21 Jun 2022 00:00:02 +0000"
+
+eth_getTransactionReceipt
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_estimateGas
+eth_blockNumber
+eth_getBlockByNumber
+eth_sendTransaction
+evm_mine
+
+    Transaction: 0xc8b15abc841a7992b70791326c0d0648eea4163be5747974018f75d63d5a8093
+    Gas used: 48668
+
+    Block Number: 14999405
+    Block Hash: 0xa4461d64c2f24e3b26928f3c5c062b1095bd338b9a8eb33206229ed9036d7c35
+    Block Time: "Tue, 21 Jun 2022 00:00:03 +0000"
+
+eth_getTransactionReceipt
+anvil_dumpState
+evm_mine
+
+    Block Number: 14999406
+    Block Hash: 0x25b1900c957bcb7bfbcae560218e6970fd1a06be93bfe234df9f179176738dd1
+    Block Time: "Tue, 21 Jun 2022 00:00:04 +0000"
+
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_getBalance
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_getBalance
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_chainId
+eth_call
+eth_chainId
+eth_call
