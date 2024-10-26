@@ -67,9 +67,9 @@ env = UniswapV3Env(
     #   agent=agent1, pool="USDC/WETH-0.05", short_window=25, long_window=100
     #)
 
-dashboard_server_port=2222
+dashboard_server_port=6666
 simulation_status_bar=True
-auto_close=False
+auto_close=True
 policy=buy_bitcoins(agent = agent1)
 
 backtest_run(
