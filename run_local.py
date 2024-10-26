@@ -41,6 +41,10 @@ pools = ["USDC/WETH-0.05", "WBTC/WETH-0.05"]
 run_length=timedelta(hours=0.05)    
 start_time = dateparser.parse("2022-06-21 00:00:00 UTC")
 end_time = start_time + run_length
+start_time = dateparser.parse("2024-06-20 00:00:00 UTC")
+end_time = start_time + run_length
+end_time = dateparser.parse("2024-06-21 00:00:00 UTC")
+
 
 agent1 = UniswapV3PoolWealthAgent(
      initial_portfolio= {"USDC": Decimal(50_000), "WETH": Decimal(25),"WBTC": Decimal(1)},

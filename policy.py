@@ -43,6 +43,18 @@ def echo(expr, label=None):
         print(expr)
     return expr
 
+def flatten(nested_list):
+    result = []
+    for item in nested_list:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result
+
+
+########################################################################
+
 #pools = ["USDC/WETH-0.05", "WBTC/WETH-0.05"]
 
 class buy_bitcoins(BasePolicy):  # type: ignore
@@ -63,44 +75,55 @@ class buy_bitcoins(BasePolicy):  # type: ignore
     def dump_dollars(self, agent):
 
         amount_of_dollars = self.agent.erc20_portfolio()['USDC']
-        if amount_of_dollars > amount_of_dollars * self.dump_rate + Decimal(0.01):
+        echo(amount_of_dollars,"amount_of_dollars")
+
+        if amount_of_dollars * self.dump_rate + Decimal(0.01) > Decimal(1):
 
             # amount to sell
             amount = amount_of_dollars * self.dump_rate
-        else:
-            amount = Decimal(0)
-
-        echo(amount_of_dollars,"amount_of_dollars")
-
-        return UniswapV3Trade(agent=agent,
+            action = UniswapV3Trade(agent=agent,
                               pool = "USDC/WETH-0.05",
                               quantities=(amount, Decimal(0))
                               )
+            return action
+        
+        else:
+            return []
+
+        
+
+    
     
     def buy_bitcoin(self, agent):
 
         amount_of_WETH = Decimal(0.01)* self.agent.erc20_portfolio()['WETH']
+        echo(amount_of_WETH,"amount_of_WETH")
 
-        if amount_of_WETH > amount_of_WETH * self.dump_rate + Decimal(0.01):
+        if amount_of_WETH * self.dump_rate * Decimal(0.01) > Decimal(0.0005):
 
             # amount to sell
             amount = amount_of_WETH * self.dump_rate
-        else:
-            amount = Decimal(0)
-        echo(amount_of_WETH,"amount_of_WETH")
-
-        return UniswapV3Trade(agent=agent,
+            action = UniswapV3Trade(agent=agent,
                               pool = "WBTC/WETH-0.05",
                               quantities=(Decimal(0), amount)
                               )
+            return action
+
+        else:
+            return []
+        
+
+        
 
     def predict(self, obs):
         echo(self.agent.erc20_portfolio()['WBTC'],'self.agent.erc20_portfolio()[\'WBTC\']')
-        return [
+
+        action_sequence = [
                 self.dump_dollars(self.agent),
                 self.buy_bitcoin(self.agent)
                 ] 
         
+        return flatten(action_sequence)
 
 
         
