@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "policy"
+version = "0.1.0"
+description = ""
+authors = ["ccosnett <your.email@conor142857@icloud.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.13"
+dojo-compass = "^3.4.6"
+ipykernel = "^6.29.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
